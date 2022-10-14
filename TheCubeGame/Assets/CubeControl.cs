@@ -7,6 +7,8 @@ public class CubeControl : MonoBehaviour
 
     public Transform cubeTemplate;
 
+    
+    
     private float turningSpeed = 180;
     // Start is called before the first frame update
     void Start()
@@ -18,13 +20,16 @@ public class CubeControl : MonoBehaviour
     void Update()
     {
         if(Input.GetKey(KeyCode.UpArrow))
-            transform.position += transform.forward * Time.deltaTime;
+            transform.position += transform.forward * 2 * Time.deltaTime ;
 
         if (Input.GetKey(KeyCode.LeftArrow))
-            transform.position += Vector3.left * Time.deltaTime;
+            transform.position += Vector3.left * 2 * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.RightArrow))
-            transform.position += Vector3.right * Time.deltaTime;
+            transform.position += Vector3.right * 2 * Time.deltaTime;
+
+        if (Input.GetKey(KeyCode.DownArrow))
+            transform.position -= transform.forward * 2 * Time.deltaTime;
 
 
 
@@ -42,9 +47,9 @@ public class CubeControl : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(cubeTemplate,transform.position - transform.forward, Quaternion.identity);
+            //Instantiate(cubeTemplate,transform.position - transform.forward, Quaternion.identity);
         }
 
     }
