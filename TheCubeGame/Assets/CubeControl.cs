@@ -7,13 +7,14 @@ public class CubeControl : MonoBehaviour
 
     public Transform cubeTemplate;
 
-    
-    
+    Rigidbody ourRigidBody;
+
     private float turningSpeed = 180;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ourRigidBody = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -30,6 +31,11 @@ public class CubeControl : MonoBehaviour
 
         if (Input.GetKey(KeyCode.DownArrow))
             transform.position -= transform.forward * 2 * Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ourRigidBody.AddExplosionForce(300, transform.position + Vector3.down, 2);
+        }
 
 
 
