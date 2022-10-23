@@ -53,9 +53,9 @@ public class CubeControl : MonoBehaviour
 
         }
 
-        //if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            //Instantiate(cubeTemplate,transform.position - transform.forward, Quaternion.identity);
+            Instantiate(cubeTemplate,transform.position - transform.forward, Quaternion.identity);
         }
 
     }
